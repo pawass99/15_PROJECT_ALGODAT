@@ -11,5 +11,5 @@ public class Tugas {
         this.deadline = deadline;
         this.status = "Belum Dikerjakan";
         this.next = null;
-    }    
+    }
 }
