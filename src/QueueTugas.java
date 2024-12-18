@@ -59,7 +59,27 @@ public class QueueTugas {
     boolean isEmpty() {
         return front == null;
     }
-
+    boolean cekTugas(String NamaTugas) {
+        Tugas current = front;
+        while (current != null) {
+            if (current.NamaTugas.equals(NamaTugas)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+    void editTugas(String NamaTugas, String newNamaTugas, String newMatkul, String newDeadline) {
+        Tugas current = front;
+        while (current != null) {
+            if (current.NamaTugas.equals(NamaTugas)) {
+                current.NamaTugas = newNamaTugas!= null? newNamaTugas : current.Matkul;
+                current.Matkul = newMatkul != null ? newMatkul : current.Matkul;
+                current.deadline = newDeadline != null ? newDeadline : current.deadline;
+            }
+            current = current.next;
+        }
+    }
     void tampilkanBelumDikerjakan() {
         Tugas temp = front;
         int i = 1;
