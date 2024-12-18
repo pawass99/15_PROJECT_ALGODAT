@@ -79,4 +79,33 @@ public class QueueTugas {
             System.out.println("Tidak ada tugas yang belum dikerjakan.");
         }
     }
+
+    void sort() {
+        if (front == null || front.next == null) {
+            return; 
+        }
+
+        boolean swapped;
+        do {
+            swapped = false;
+            Tugas current = front;
+            Tugas prev = null;
+
+            while (current != null && current.next != null) {
+                if (current.deadline.compareTo(current.next.deadline) > 0) {
+                    Tugas temp = current.next;
+                    current.next = temp.next;
+                    temp.next = current;
+                    if (prev == null) {
+                        front = temp;
+                    } else {
+                        prev.next = temp;
+                    }
+                    swapped = true;
+                }
+                prev = (swapped && prev == null) ? front : current;
+                current = current.next;
+            }
+        } while (swapped);
+    }
 }

@@ -6,8 +6,6 @@ public class App {
         QueueTugas queue = new QueueTugas();
         StackTugas stack = new StackTugas();
 
-        
-
         while(true){
             System.out.println("\n===================================");
             System.out.println("  _   _                       ");
@@ -21,8 +19,9 @@ public class App {
             System.out.println("2. Lihat Tugas");
             System.out.println("3. Update Status Tugas");
             System.out.println("4. Lihat Tugas Tuntas");
-            System.out.println("5. Exit");
-            System.out.println("Pilih opsi = ");
+            System.out.println("5. Urutkan Tugas berdasarkan Deadline");
+            System.out.println("6. Exit");
+            System.out.print("Pilih opsi = ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
 
@@ -57,6 +56,9 @@ public class App {
                     stack.tampilHistory();
                     break;
                 case 5:
+                    queue.sort();
+                    break;
+                case 6:
                     scanner.close();
                     return;
                 default:
