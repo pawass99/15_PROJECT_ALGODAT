@@ -1,15 +1,25 @@
-public class Tugas {
-    String Matkul;
-    String NamaTugas;
+class Tugas {
+    String nama;
     String deadline;
     String status;
-    Tugas next;
+    double nilai;
+    Tugas firstChild;
+    Tugas nextSibling;
 
-    Tugas(String Matkul, String name, String deadline) {
-        this.Matkul = Matkul;
-        this.NamaTugas = name;
-        this.deadline = deadline;
+    Tugas(String nama) {
+        this.nama = nama;
+        this.deadline = null;
         this.status = "Belum Dikerjakan";
-        this.next = null;
+        this.firstChild = null;
+        this.nextSibling = null;
     }
+
+    Tugas(String nama, String deadline, String status) {
+        this.nama = nama;
+        this.deadline = deadline;
+        this.status = status;
+        this.firstChild = null;
+        this.nextSibling = null;
+    }
+
 }
